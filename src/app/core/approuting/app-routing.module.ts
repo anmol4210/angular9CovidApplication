@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 // import { DashboardComponent } from 'src/app/dashboard/dashboard/dashboard.component';
 // import { DashboardModule } from 'src/app/dashboard/dashboard.module';
 // import { dasboardRoutes } from 'src/app/dashboard/dashboard-routing.module';
+import { PrecautionsModule } from 'src/app/precautions/precautions.module';
 import { NewsComponent } from 'src/app/news/news.component';
 import { PrecautionsComponent } from 'src/app/precautions/precautions.component';
 import { LoginComponent } from 'src/app/login/login.component';

@@ -12,14 +12,12 @@ export class StateListComponent implements OnInit {
 
   ngOnInit(): void {
     this.stateService.getStateList().subscribe((data: any) => {
-      // console.log('Getting Details');
-      // console.log(data['statewise']);
       this.states = data['statewise'];
     });
   }
 
-  getDetails(state: String) {
-    console.log(state);
-    this.stateService.getStateDetailsList().subscribe((data: any) => {});
-  }
+  // getDetails(state: String) {
+  //   console.log(state);
+  //   this.stateService.getStateDetailsList().subscribe((data: any) => {});
+  // }
 }

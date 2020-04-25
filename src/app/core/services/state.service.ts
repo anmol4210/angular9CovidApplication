@@ -14,6 +14,7 @@ export class StateService {
   stateUrl: string = 'https://api.covid19india.org/data.json';
   stateDetailsUrl: string =
     'https://api.covid19india.org/state_district_wise.json';
+
   constructor(private http: HttpClient) {}
 
   getStateList(): Observable<any> {

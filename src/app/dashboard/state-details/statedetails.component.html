@@ -1,1 +1,23 @@
-<h2>Welcome to the state</h2>
+<table class="table mt-2">
+    <thead class="thead-dark">
+        <tr>
+
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>Recovered</th>
+            <th>Deaths</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let state of states | keyvalue">
+
+            <td>{{state.key}}</td>
+            <td>{{state.value.confirmed}}</td>
+            <td>{{state.value.recovered}}</td>
+            <td>{{state.value.deceased}}</td>
+
+        </tr>
+
+    </tbody>
+</table>

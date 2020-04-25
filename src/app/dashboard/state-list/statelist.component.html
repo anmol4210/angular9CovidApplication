@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table mt-2">
     <thead class="thead-dark">
         <tr>
 
@@ -16,7 +16,7 @@
             <td>{{state.confirmed}}</td>
             <td>{{state.recovered}}</td>
             <td>{{state.deaths}}</td>
-            <td><button *ngIf="state.statecode != 'TT'" class="btn btn-dark" (click)="getDetails(state.statecode)">Get
+            <td><button *ngIf="state.statecode != 'TT'" class="btn btn-dark" [routerLink]="['/home',state.state]">Get
                     Details</button></td>
         </tr>
 
