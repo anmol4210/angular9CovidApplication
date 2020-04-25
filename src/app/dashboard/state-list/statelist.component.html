@@ -1,1 +1,24 @@
-<h2>Welcome to the state</h2>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>Recovered</th>
+            <th>Deaths</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let state of states">
+
+            <td>{{state.state}}</td>
+            <td>{{state.confirmed}}</td>
+            <td>{{state.recovered}}</td>
+            <td>{{state.deaths}}</td>
+            <td><button *ngIf="state.statecode != 'TT'" class="btn btn-dark" (click)="getDetails(state.statecode)">Get
+                    Details</button></td>
+        </tr>
+
+    </tbody>
+</table>
