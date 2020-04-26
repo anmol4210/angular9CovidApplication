@@ -4,11 +4,41 @@
         <div class="align-self-center">
             <h3 class="text-dark font-weight-light mb-4">Login</h3>
 
-            <form class="form-group" method="post" action="save">
-                <input class="form-control" path="username" required="true" placeholder="username" /><br>
-                <input class="form-control" path="password" type="password" required="true"
-                    placeholder="password" /><br>
-                <input class="btn btn-dark" type="submit" value="Login" />
+            <form novalidate class="form-group" (ngSubmit)="save(userForm)" #userForm="ngForm">
+                <div class="form-group row mb-2">
+                    <label class="col-md-3 col-form-label" for="txtName">Username:</label>
+                    <div class="col-md-7">
+                        <input class="form-control" id="txtName" type="text" name="username" [(ngModel)]="user.username"
+                            #nameVar="ngModel" autocomplete="username"
+                            [ngClass]="{'is-invalid':(nameVar.touched || nameVar.dirty) && !nameVar.valid}"
+                            required="true" minlength="3" placeholder="username" />
+                        <span class="invalid-feedback">
+                            <span *ngIf="nameVar.errors?.required">Please Enter your name</span>
+                            <span *ngIf="nameVar.errors?.minlength">
+                                Name must be longer than 3 characters
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group row mb-2">
+                    <label class="col-md-3 col-form-label" for="txtPassword">Password:</label>
+                    <div class="col-md-7">
+                        <input class="form-control" id="txtPassword" type="password" name="password"
+                            [(ngModel)]="user.password" #passwordVar="ngModel"
+                            [ngClass]="{'is-invalid':(passwordVar.touched || passwordVar.dirty) && !passwordVar.valid}"
+                            required="true" autocomplete="password" minlength="3" placeholder="password" />
+
+                        <span class="invalid-feedback">
+                            <span *ngIf="passwordVar.errors?.required">Please Enter your password</span>
+                            <span *ngIf="passwordVar.errors?.minlength">
+                                Password must be longer than 3 characters
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <br>
+                <button class="btn btn-dark" type="submit" [disabled]="!userForm.valid">Submit</button>
             </form>
 
 

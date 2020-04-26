@@ -4,7 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashBoardRoutingModule } from './dashboard-routing.module';
 // import { BrowserModule } from '@angular/platform-browser';
 // import { RouterModule } from '@angular/router';
-
+// import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [DashboardComponent],
   imports: [CommonModule, DashBoardRoutingModule],
