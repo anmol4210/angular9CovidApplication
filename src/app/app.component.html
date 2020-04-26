@@ -1,18 +1,19 @@
 <app-header></app-header>
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class='nav-link' routerLinkActive='active' [routerLink]="['/home']">Dashboard</a>
-  </li>
-  <li class="nav-item">
-    <a class='nav-link' routerLinkActive='active' [routerLink]="['/news']">Latest News</a>
-  </li>
-  <li class="nav-item">
-    <a class='nav-link' routerLinkActive='active' [routerLink]="['/precautions']">Precautions</a>
-  </li>
-</ul>
+<div class="main">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class='nav-link text-dark' routerLinkActive='active' [routerLink]="['/home']">Dashboard</a>
+    </li>
+    <li class="nav-item">
+      <a class='nav-link text-dark' routerLinkActive='active' [routerLink]="['/news']">Latest News</a>
+    </li>
+    <li class="nav-item">
+      <a class='nav-link text-dark' routerLinkActive='active' [routerLink]="['/precautions']">Precautions</a>
+    </li>
+  </ul>
 
-<div class="container">
-  <router-outlet></router-outlet>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-
 <app-footer></app-footer>
