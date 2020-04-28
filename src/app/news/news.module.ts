@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NewsComponent } from './news.component';
-
-
-
+import { NewsComponent } from './news/news.component';
+import { NewsRoutingModule } from './news-routing.module';
 @NgModule({
   declarations: [NewsComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, NewsRoutingModule],
 })
-export class NewsModule { }
+export class NewsModule {}
