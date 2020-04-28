@@ -12,12 +12,16 @@ import { PrecautionsModule } from 'src/app/precautions/precautions.module';
 import { LoginModule } from 'src/app/login/login.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LoginInMemoryDataService } from './core/services/login-in-memory-data.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 // import {DashboardModule} from 'src/app/dashboard/dashboard.module'
 @NgModule({
   declarations: [AppComponent, PortalHeaderComponent, PortalFooterComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(LoginInMemoryDataService, {

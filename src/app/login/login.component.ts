@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Login } from '../shared/interfaces/login';
 import { LoginService } from '../core/services/login.service';
-// import { Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +12,11 @@ import { LoginService } from '../core/services/login.service';
 })
 export class LoginComponent implements OnInit {
   user: Login;
-  constructor(private loginService: LoginService) {
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    private toastr: ToastrService
+  ) {
     this.user = { id: 0, username: '', password: '' };
   }
 
@@ -24,10 +30,14 @@ export class LoginComponent implements OnInit {
     // });
     this.loginService.findUser(userForm.value).subscribe((data: any) => {
       if (data.length > 0) {
-        console.log('present');
-        // this.router.navigate(['dashboard']);
+        this.toastr.success('Logged In Successfully!', 'Covid19');
+        // console.log('present');
+        this.router.navigate(['home']);
+        localStorage.setItem('validUser', 'True');
+      } else {
+        this.toastr.warning('Incorrect username or password!', 'Covid19');
       }
-      console.log(data.length);
+      // console.log(data.length);
     });
   }
 }
