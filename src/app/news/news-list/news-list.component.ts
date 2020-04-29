@@ -10,9 +10,11 @@ export class NewsListComponent implements OnInit {
   constructor(private newsService: NewsService) {}
   newsDetails: News[];
   loggedIn: boolean = false;
+  loaddingData: boolean = true;
   ngOnInit(): void {
     this.newsService.getNews().subscribe((data) => {
       this.newsDetails = data;
+      this.loaddingData = false;
       // console.log(this.newsDetails);
     });
     if (localStorage.getItem('validUser') == 'True') {
