@@ -10,11 +10,12 @@ import { HttpClientModule } from '@angular/common/http';
 // import { LoginInMemoryDataService } from './core/services/login-in-memory-data.service';
 import { PrecautionsModule } from 'src/app/precautions/precautions.module';
 import { LoginModule } from 'src/app/login/login.module';
-
+// import { AddNewsModule } from 'src/app/news/add-news/add-news.module';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { LoginInMemoryDataService } from './core/services/login-in-memory-data.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // import {DashboardModule} from 'src/app/dashboard/dashboard.module'
 @NgModule({
@@ -29,6 +30,8 @@ import { ToastrModule } from 'ngx-toastr';
       dataEncapsulation: false,
       passThruUnknownUrl: true,
     }),
+    // FormsModule,
+    // ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

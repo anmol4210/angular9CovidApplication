@@ -9,11 +9,14 @@ import { News } from '../../shared/interfaces/news';
 export class NewsListComponent implements OnInit {
   constructor(private newsService: NewsService) {}
   newsDetails: News[];
-
+  loggedIn: boolean = false;
   ngOnInit(): void {
     this.newsService.getNews().subscribe((data) => {
       this.newsDetails = data;
       // console.log(this.newsDetails);
     });
+    if (localStorage.getItem('validUser') == 'True') {
+      this.loggedIn = true;
+    }
   }
 }

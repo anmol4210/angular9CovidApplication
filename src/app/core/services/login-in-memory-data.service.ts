@@ -20,8 +20,7 @@ export class LoginInMemoryDataService implements InMemoryDbService {
         description: 'description',
         summary: 'summary',
         full_news: 'full news',
-        image_url:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBpZNdDwKdaklUMXv4VfFSdq583D655eUkd13t4Ih22w_EvZ9P&usqp=CAU',
+        image_url: 'assets/covid19.jpg',
       },
       {
         id: 2,
@@ -29,8 +28,7 @@ export class LoginInMemoryDataService implements InMemoryDbService {
         description: 'description',
         summary: 'summary',
         full_news: 'full news',
-        image_url:
-          'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTBpZNdDwKdaklUMXv4VfFSdq583D655eUkd13t4Ih22w_EvZ9P&usqp=CAU',
+        image_url: 'assets/covid19.jpg',
       },
     ];
     return { loginDetail, newsDetails };

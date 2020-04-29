@@ -30,6 +30,12 @@ export class NewsService {
       .pipe(catchError(this.handleError));
   }
 
+  addNews(news: News): Observable<News> {
+    return this.http
+      .post<News>(this.apiURL, news, httpOptions)
+      .pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       console.log('An error occured', error.error.message);

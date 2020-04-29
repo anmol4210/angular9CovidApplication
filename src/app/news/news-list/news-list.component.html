@@ -11,5 +11,19 @@
                 Details</button>
         </div>
     </div>
+    <div *ngIf='loggedIn' class="p-3 m-3 card bg-light ">
+        <div class="card-body">
+            <div class="d-flex justify-content-center pt-2">
+                <h2>Add News</h2>
+
+            </div>
+            <div class="d-flex justify-content-center pt-0">
+                <button class="glyphicon glyphicon-plus-sign btn" style='font-size:48px;color:rgb(85, 81, 81)'
+                    [routerLink]="['/news/add']"></button>
+
+            </div>
+
+        </div>
+    </div>
 
 </div>

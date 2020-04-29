@@ -1,14 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-around">
+<nav class="nav nav-pills nav-justified">
 
-    <div class='navbar-brand'>{{title}}</div>
+    <div class='nav-item pt-4'>{{title}}</div>
+    <div class='nav-item pt-4'></div>
+    <div class="nav-item pt-4">
+        <div *ngIf='!validUser; else elseBlock'>
+            <button class="btn btn-dark" [routerLink]="['/login']">Login</button>
+        </div>
 
-
-    <div *ngIf='!validUser; else elseBlock' class="justify-content-end">
-        <button class="btn btn-dark" [routerLink]="['/login']">Login</button>
+        <ng-template #elseBlock>
+            <button class="btn btn-dark" (click)="logout()">Logout</button>
+        </ng-template>
     </div>
-
-    <ng-template #elseBlock class="justify-content-end">
-        <button class="btn btn-dark" (click)="logout()">Logout</button>
-    </ng-template>
-
 </nav>

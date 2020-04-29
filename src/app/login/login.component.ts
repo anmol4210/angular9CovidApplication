@@ -8,6 +8,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
+  providers: [LoginService],
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
@@ -30,12 +31,16 @@ export class LoginComponent implements OnInit {
     // });
     this.loginService.findUser(userForm.value).subscribe((data: any) => {
       if (data.length > 0) {
-        this.toastr.success('Logged In Successfully!', 'Covid19');
+        this.toastr.success('Logged In Successfully!', 'Covid19', {
+          timeOut: 1000,
+        });
         // console.log('present');
         this.router.navigate(['home']);
         localStorage.setItem('validUser', 'True');
       } else {
-        this.toastr.warning('Incorrect username or password!', 'Covid19');
+        this.toastr.warning('Incorrect username or password!', 'Covid19', {
+          timeOut: 1000,
+        });
       }
       // console.log(data.length);
     });

@@ -1,1 +1,45 @@
-<p>add-news works!</p>
+<form (ngSubmit)="save()" [formGroup]="newsForm">
+    <div class="form-group">
+        <label for="txtTitle">News Title</label>
+        <input id="txtTitle" class="form-control" type="text" placeholder="Enter Title" formControlName="title"
+            [ngClass]="{'is-invalid':(title.touched || title.dirty)&&!title.valid}" />
+        <span class="invalid-feedback" *ngIf="title.errors?.required">Please enter title</span>
+        <span class="invalid-feedback" *ngIf="title.errors?.minlength">Title must be longer than 5 characters</span>
+    </div>
+
+    <div class="form-group">
+        <label for="txtDescription">News Description</label>
+        <input id="txtDescription" class="form-control" type="text" placeholder="Enter Description"
+            formControlName="description"
+            [ngClass]="{'is-invalid':(newsForm.get('description').touched || newsForm.get('description').dirty)&&!newsForm.get('description').valid}" />
+        <span class="invalid-feedback" *ngIf="newsForm.get('description').errors?.required">Please enter
+            description</span>
+
+    </div>
+
+    <div class="form-group">
+        <label for="txtSummary">News Summary</label>
+        <input id="txtSummary" class="form-control" type="text" placeholder="Enter Summary" formControlName="summary"
+            [ngClass]="{'is-invalid':(newsForm.get('summary').touched || newsForm.get('summary').dirty)&&!newsForm.get('summary').valid}" />
+        <span class="invalid-feedback" *ngIf="newsForm.get('summary').errors?.required">Please enter title</span>
+
+    </div>
+
+    <div class="form-group">
+        <label for="txtFullNews">Full News</label>
+        <input id="txtFullNews" class="form-control" type="text" placeholder="Enter Full News"
+            formControlName="fullNews" />
+
+    </div>
+
+    <div class="form-group">
+        <label for="txtImageUrl">Full News</label>
+        <input id="txtImageUrl" class="form-control" type="text" placeholder="Enter ImageUrl"
+            formControlName="imageUrl" />
+
+    </div>
+
+    <div class="d-flex justify-content-center">
+        <button class="btn btn-dark" type="submit" [disabled]="!newsForm.valid">Save</button>
+    </div>
+</form>

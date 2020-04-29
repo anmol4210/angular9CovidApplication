@@ -27,7 +27,7 @@ export class LoginService {
   findUser(loginDetails: Login): Observable<Login[]> {
     return this.http
       .get<Login[]>(
-        `${this.apiURL}/?username=${loginDetails.username}&&password=${loginDetails.password}`
+        `${this.apiURL}/?username=^${loginDetails.username}$&&password=^${loginDetails.password}$`
       )
       .pipe(catchError(this.handleError));
   }
