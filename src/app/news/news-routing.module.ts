@@ -5,6 +5,7 @@ import { NewsListModule } from './news-list/new-list.module';
 import { AddNewsComponent } from './add-news/add-news.component';
 import { NewsListComponent } from './news-list/news-list.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
+import { AdminGuard } from '../shared/guards/admin.guard';
 export const newsRoutes: Routes = [
   {
     path: '',
@@ -14,7 +15,11 @@ export const newsRoutes: Routes = [
     path: 'details/:newsId',
     component: NewsDetailComponent,
   },
-  { path: 'add', component: AddNewsComponent },
+  {
+    path: 'add',
+    component: AddNewsComponent,
+    canActivate: [AdminGuard],
+  },
 ];
 
 @NgModule({
