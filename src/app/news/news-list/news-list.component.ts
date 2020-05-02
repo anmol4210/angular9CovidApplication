@@ -17,8 +17,15 @@ export class NewsListComponent implements OnInit {
       this.loaddingData = false;
       // console.log(this.newsDetails);
     });
-    if (localStorage.getItem('validUser') == 'True') {
+    if (this.isAuthenticated()) {
       this.loggedIn = true;
     }
+  }
+
+  isAuthenticated(): boolean {
+    if (localStorage.getItem('validUser') == 'True') {
+      return true;
+    }
+    return false;
   }
 }

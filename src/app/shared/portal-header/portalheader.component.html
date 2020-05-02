@@ -2,7 +2,7 @@
 
     <div class='nav-item pt-4'>{{title}}</div>
     <div class='nav-item pt-4'></div>
-    <div class="nav-item pt-4">
+    <div class="nav-item pt-4 log-btn">
         <div *ngIf='!validUser; else elseBlock'>
             <button class="btn btn-dark" [routerLink]="['/login']">Login</button>
         </div>

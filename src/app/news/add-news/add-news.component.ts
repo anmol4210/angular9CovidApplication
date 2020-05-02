@@ -17,7 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AddNewsComponent implements OnInit {
   newsForm: FormGroup;
-  title: FormControl;
+  // title: FormControl;
   news: News = {
     id: null,
     title: 'New News',
@@ -34,23 +34,26 @@ export class AddNewsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.title = new FormControl();
+    // this.title = new FormControl();
     // this.newsForm = new FormGroup({
     //   title: new FormControl('Default Value'),
     // });
     this.newsForm = this.fb.group({
-      title: ['Default Title', [Validators.required, Validators.minLength(5)]],
-      summary: [{ value: '', disabled: false }, Validators.required],
-      description: [{ value: '', disabled: false }, Validators.required],
+      title: [
+        { value: null, disabled: false },
+        [Validators.required, Validators.minLength(5)],
+      ],
+      summary: [{ value: null, disabled: false }, Validators.required],
+      description: [{ value: null, disabled: false }, Validators.required],
       fullNews: [''],
       imageUrl: ['assets/corona.jpg'],
     });
   }
   save() {
-    console.log('submit called');
-    console.log(this.newsForm.controls);
+    // console.log('submit called');
+    // console.log(this.newsForm.controls);
     this.newService.addNews(this.news).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.router.navigate(['news']);
     });
   }

@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portalfooter.component.css'],
 })
 export class PortalFooterComponent implements OnInit {
-  // title: String = 'Covid19 Updates';
+  name: String = 'Anmol Narang';
   constructor() {}
 
   ngOnInit(): void {}

@@ -2,9 +2,10 @@
     <div class="form-group">
         <label for="txtTitle">News Title</label>
         <input id="txtTitle" class="form-control" type="text" placeholder="Enter Title" formControlName="title"
-            [ngClass]="{'is-invalid':(title.touched || title.dirty)&&!title.valid}" />
-        <span class="invalid-feedback" *ngIf="title.errors?.required">Please enter title</span>
-        <span class="invalid-feedback" *ngIf="title.errors?.minlength">Title must be longer than 5 characters</span>
+            [ngClass]="{'is-invalid':(newsForm.get('title').touched || newsForm.get('title').dirty)&&!newsForm.get('title').valid}" />
+        <span class="invalid-feedback" *ngIf="newsForm.get('title').errors?.required">Please enter title</span>
+        <span class="invalid-feedback" *ngIf="newsForm.get('title').errors?.minlength">Title must be longer than 5
+            characters</span>
     </div>
 
     <div class="form-group">
@@ -21,7 +22,7 @@
         <label for="txtSummary">News Summary</label>
         <input id="txtSummary" class="form-control" type="text" placeholder="Enter Summary" formControlName="summary"
             [ngClass]="{'is-invalid':(newsForm.get('summary').touched || newsForm.get('summary').dirty)&&!newsForm.get('summary').valid}" />
-        <span class="invalid-feedback" *ngIf="newsForm.get('summary').errors?.required">Please enter title</span>
+        <span class="invalid-feedback" *ngIf="newsForm.get('summary').errors?.required">Please enter Summary</span>
 
     </div>
 

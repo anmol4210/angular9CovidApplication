@@ -24,20 +24,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   save(userForm: NgForm) {
-    // console.log(userForm.form);
-    // console.log(JSON.stringify(userForm.value));
-    // this.loginService.getUsers().subscribe((data: any) => {
-    //   console.log(data);
-    // });
     this.loginService.findUser(userForm.value).subscribe((data: any) => {
       if (data.length > 0) {
         this.toastr.success('Logged In Successfully!', 'Covid19', {
           timeOut: 1000,
         });
+
+        localStorage.setItem('validUser', 'True');
         // console.log('present');
         this.router.navigate(['home']);
-        localStorage.setItem('validUser', 'True');
       } else {
+        // localStorage.setItem('validUser', 'True');
         this.toastr.warning('Incorrect username or password!', 'Covid19', {
           timeOut: 1000,
         });

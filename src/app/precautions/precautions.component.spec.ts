@@ -1,5 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { By } from '@angular/platform-browser';
 import { PrecautionsComponent } from './precautions.component';
 
 describe('PrecautionsComponent', () => {
@@ -8,9 +8,8 @@ describe('PrecautionsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PrecautionsComponent ]
-    })
-    .compileComponents();
+      declarations: [PrecautionsComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +20,14 @@ describe('PrecautionsComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('check precautions data', () => {
+    expect(component.precautions.length).toBeGreaterThan(2);
+  });
+
+  it('Check presence of li', () => {
+    const tag = fixture.debugElement.query(By.css('li'));
+    expect(tag).toBeTruthy();
   });
 });

@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { DashboardComponent } from './dashboard.component';
-
+import { By } from '@angular/platform-browser';
 describe('DashboardComponent', () => {
   let component: DashboardComponent;
   let fixture: ComponentFixture<DashboardComponent>;
@@ -16,6 +15,11 @@ describe('DashboardComponent', () => {
     fixture = TestBed.createComponent(DashboardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+  });
+
+  it('should contain router outlet', () => {
+    const tag = fixture.debugElement.query(By.css('router-outlet'));
+    expect(tag).toBeTruthy();
   });
 
   it('should create', () => {
