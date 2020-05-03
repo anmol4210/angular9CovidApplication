@@ -59,12 +59,6 @@ describe('AppComponent', () => {
     });
   }));
 
-  it('navigate to "login" redirects you to /login', async(() => {
-    router.navigate(['/login']).then(() => {
-      expect(location.path()).toBe('/login');
-    });
-  }));
-
   it('navigate to "news" takes you to /news', async(() => {
     router.navigate(['/news']).then(() => {
       expect(location.path()).toBe('/news');
@@ -73,6 +67,15 @@ describe('AppComponent', () => {
 
   it('should contain router outlet', () => {
     const tag = fixture.debugElement.query(By.css('router-outlet'));
+    expect(tag).toBeTruthy();
+  });
+
+  it('should contain app header', () => {
+    const tag = fixture.debugElement.query(By.css('app-header'));
+    expect(tag).toBeTruthy();
+  });
+  it('should contain  app footer', () => {
+    const tag = fixture.debugElement.query(By.css('app-footer'));
     expect(tag).toBeTruthy();
   });
 });
