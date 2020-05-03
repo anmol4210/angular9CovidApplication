@@ -7,7 +7,8 @@ import { routes } from './core/approuting/app-routing.module';
 import { Location } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 describe('AppComponent', () => {
   let location: Location;
   let router: Router;
@@ -27,12 +28,12 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-    router = TestBed.get(Router);
-    location = TestBed.get(Location);
-
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
+    router = TestBed.get(Router);
+    location = TestBed.get(Location);
     router.initialNavigation();
+    fixture.detectChanges();
   });
 
   it('should create the app', () => {
@@ -58,6 +59,14 @@ describe('AppComponent', () => {
       expect(location.path()).toBe('/precautions');
     });
   }));
+  // it('navigate to "login" redirects you to /login', async(() => {
+
+  //   fixture.whenStable().then(() => {
+  //     router.navigate(['/login']).then(() => {
+  //       expect(location.path()).toBe('/login');
+  //     });
+  //   });
+  // }));
 
   it('navigate to "news" takes you to /news', async(() => {
     router.navigate(['/news']).then(() => {
