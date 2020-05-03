@@ -54,7 +54,7 @@ describe('AddNewsComponent', () => {
   it('check default image url and title validity', () => {
     // component.ngOnInit();
     let title = component.newsForm.controls['title'];
-    let imageUrl = component.newsForm.controls['imageUrl'];
+    let imageUrl = component.newsForm.controls['image_url'];
     expect(title.valid).toBeFalsy();
     expect(imageUrl.value).toBe('assets/corona.jpg');
 

@@ -5,7 +5,7 @@ import { PrecautionsComponent } from 'src/app/precautions/precautions.component'
 import { LoginComponent } from 'src/app/login/login.component';
 import { PageNotFoundComponent } from 'src/app/shared/pagenotfound/pagenotfound.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',

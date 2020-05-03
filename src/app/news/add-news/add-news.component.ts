@@ -45,14 +45,15 @@ export class AddNewsComponent implements OnInit {
       ],
       summary: [{ value: null, disabled: false }, Validators.required],
       description: [{ value: null, disabled: false }, Validators.required],
-      fullNews: [''],
-      imageUrl: ['assets/corona.jpg'],
+      full_news: [''],
+      image_url: ['assets/corona.jpg'],
     });
   }
   save() {
     // console.log('submit called');
     // console.log(this.newsForm.controls);
-    this.newService.addNews(this.news).subscribe((data) => {
+    // console.log(this.newsForm.value);
+    this.newService.addNews(this.newsForm.value).subscribe((data) => {
       // console.log(data);
       this.router.navigate(['news']);
     });

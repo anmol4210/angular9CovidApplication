@@ -1,10 +1,21 @@
-<div class="card m-2">
-    <img class="card-img-top" src="{{news.image_url}}" alt="Card image cap">
-    <div class="card-body">
-        <h4 class="card-title">{{news.title}}</h4>
-        <p class="card-text">
-            {{news.full_news}}
-        </p>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="m-2 col-sm-8">
+        <div class="p-2 row">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
+                <img class="card-img-top" src="{{news.image_url}}" alt="Card image cap">
+            </div>
+            <div class="col-sm-3"></div>
 
+        </div>
+        <div class="p-2 card-body">
+            <h4 class="card-title">{{news.title}}</h4>
+            <p class="card-text">
+                {{news.full_news}}
+            </p>
+
+        </div>
     </div>
+    <div class="col-sm-2"></div>
 </div>

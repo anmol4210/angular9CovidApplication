@@ -1,16 +1,4 @@
 <div class="card-columns">
-    <div *ngFor="let news of newsDetails" class="card p-3 m-3">
-        <img class="card-img-top" src="{{news.image_url}}" alt="Card image cap">
-        <div class="card-body">
-            <h4 class="card-title">{{news.title}}</h4>
-            <h6 class="card-subtitle mb-2 text-muted">{{news.description}}</h6>
-            <p class="card-text">
-                {{news.summary}}
-            </p>
-            <button class="btn btn-dark" [routerLink]="['/news/details',news.id]">Get
-                Details</button>
-        </div>
-    </div>
     <div *ngIf='loggedIn' class="p-3 m-3 card bg-light ">
         <div class="card-body">
             <div class="d-flex justify-content-center pt-2">
@@ -25,6 +13,19 @@
 
         </div>
     </div>
+    <div *ngFor="let news of newsDetails" class="card p-3 m-3">
+        <img class="card-img-top" src="{{news.image_url}}" alt="Card image cap">
+        <div class="card-body">
+            <h4 class="card-title">{{news.title}}</h4>
+            <h6 class="card-subtitle mb-2 text-muted">{{news.description}}</h6>
+            <p class="card-text">
+                {{news.summary}}
+            </p>
+            <button class="btn btn-dark" [routerLink]="['/news/details',news.id]">Get
+                Details</button>
+        </div>
+    </div>
+
     <div *ngIf='loaddingData' class="loading">
         Loading&#8230;
     </div>
